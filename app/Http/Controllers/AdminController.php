@@ -24,6 +24,6 @@ class AdminController extends Controller
     public function index()
     {
         // dd("admin");
-        return view('admin');
+        return view('admin.home');
     }
 }
