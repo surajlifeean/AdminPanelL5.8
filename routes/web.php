@@ -24,9 +24,12 @@ Route::get('/courses', function () {
     return view('courses');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+
+Route::get('/contact', 'User\ContactController@index')->name('contact.index');
+Route::post('/contact', 'User\ContactController@store')->name('contact.store');
 
 Route::get('/gallery', function () {
     return view('gallery');
