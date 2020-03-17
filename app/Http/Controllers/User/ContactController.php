@@ -31,6 +31,7 @@ class ContactController extends Controller
        $support->subject   =$request->subject;
        $support->msg   =$request->msg;
        $support->name      =$request->name;
+       $support->phone      =$request->phone;
        $support->email     =$request->email;
        // echo"<pre>";
        // print_r($support);

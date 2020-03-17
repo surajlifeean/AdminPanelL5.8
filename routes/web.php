@@ -30,10 +30,8 @@ Route::get('/courses', function () {
 
 Route::get('/contact', 'User\ContactController@index')->name('contact.index');
 Route::post('/contact', 'User\ContactController@store')->name('contact.store');
+Route::get('/gallery', 'User\GalleryController@index')->name('gallery.index');
 
-Route::get('/gallery', function () {
-    return view('gallery');
-});
 
 Route::get('/affiliations', function () {
     return view('affiliations');
@@ -58,5 +56,9 @@ Route::prefix('admin')->group(function() {
 	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');
 	Route::get('/', 'AdminController@index')->name('admin');
+	Route::resource('contact', 'Admin\ContactController');
+	Route::resource('gallery', 'Admin\GalleryController');
+
+
 
 });

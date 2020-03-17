@@ -64,7 +64,10 @@
                 <input type="text" name="name" class="form-control" placeholder="Your Name" required>
               </div>
               <div class="form-group">
-                <input type="text" name="email" class="form-control" placeholder="Your Email" required>
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <input type="number" name="phone" class="form-control" placeholder="Your Contact Number" data-parsley-type="digits" minlength="10" required>
               </div>
               <div class="form-group">
                 <input type="text" name="subject" class="form-control" placeholder="Subject" required>

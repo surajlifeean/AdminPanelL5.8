@@ -19,6 +19,8 @@
               <!-- Main Content -->
               <div id="content">
                    @include('admin.partials._navbar')
+      <div>@include('partials._message')</div>
+                   
                    @yield('content')
               </div>
           </div>

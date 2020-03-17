@@ -36,73 +36,20 @@
     <div class="tz-gallery">
 
         <div class="row">
+@foreach($gallery as $image)
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a class="lightbox" href="{{asset('/images/gallery/'.$image->image)}}">
+                        <img src="{{asset('/images/gallery/'.$image->image)}}" alt="Park">
+                    </a>
+                    <div class="caption">
+                        <h3>{{$image->title}}</h3>
+                        <p>{{$image->description}}</p>
+                    </div>
+                </div>
+            </div>
+@endforeach
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="{{asset('/images/park.jpg')}}">
-                        <img src="{{asset('/images/park.jpg')}}" alt="Park">
-                    </a>
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="{{asset('/images/park.jpg')}}">
-                        <img src="{{asset('/images/park.jpg')}}" alt="Bridge">
-                    </a>
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="{{asset('/images/park.jpg')}}">
-                        <img src="{{asset('/images/park.jpg')}}" alt="Tuneel">
-                    </a>
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="{{asset('/images/park.jpg')}}">
-                        <img src="{{asset('/images/park.jpg')}}" alt="Coast">
-                    </a>
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="{{asset('/images/park.jpg')}}">
-                        <img src="{{asset('/images/park.jpg')}}" alt="Rails">
-                    </a>
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="{{asset('/images/park.jpg')}}">
-                        <img src="{{asset('/images/park.jpg')}}" alt="Traffic">
-                    </a>
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </div>
