@@ -18,8 +18,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('admin.gallery');
-        
+        $gallery=Gallery::all();
+        return view('admin.gallery.index')->withGallery($gallery);
     }
 
     /**
@@ -29,7 +29,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.gallery.create');
     }
 
     /**
@@ -74,7 +74,9 @@ class GalleryController extends Controller
      */
     public function show($id)
     {
-        //
+        #dd($id);
+        $image=Gallery::find($id);
+        return view('admin.gallery.show')->withImage($image);
     }
 
     /**
@@ -108,6 +110,6 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dd($id);
     }
 }
