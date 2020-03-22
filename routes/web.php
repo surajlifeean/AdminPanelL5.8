@@ -31,6 +31,8 @@ Route::get('/courses', function () {
 Route::get('/contact', 'User\ContactController@index')->name('contact.index');
 Route::post('/contact', 'User\ContactController@store')->name('contact.store');
 Route::get('/gallery', 'User\GalleryController@index')->name('gallery.index');
+Route::get('/doctors-chamber', 'User\DoctorController@index')->name('doctor.index');
+
 
 
 Route::get('/affiliations', function () {
@@ -41,9 +43,9 @@ Route::get('/notice', function () {
     return view('notice');
 });
 
-Route::get('/doctors-chamber', function () {
-    return view('doctorsChamber');
-});
+// Route::get('/doctors-chamber', function () {
+//     return view('doctorsChamber');
+// });
 
 
 Auth::routes();
@@ -58,6 +60,7 @@ Route::prefix('admin')->group(function() {
 	Route::get('/', 'AdminController@index')->name('admin');
 	Route::resource('contact', 'Admin\ContactController');
 	Route::resource('gallery', 'Admin\GalleryController');
+	Route::resource('doctor', 'Admin\DoctorController');
     Route::get('gallery/delete/{id}', array('as' => 'admin.gallery.delete', 'uses' => 'Admin\GalleryController@delete'));
 
 

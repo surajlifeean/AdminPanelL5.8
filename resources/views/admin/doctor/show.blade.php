@@ -24,21 +24,24 @@
                          <div class="form-group">
                           <label class="col-sm-3 control-label">Image Title</label>
                           <div class="col-sm-9">
-                           <input type="text" name="title" class="form-control" value="{{$image->title}}" data-required="true" placeholder="Title" required>   
-                         </div>
+<!--                             <input type="text" name="title" class="form-control"  data-required="true" placeholder="Title" required>  
+ -->
+                            {{Form::label('title',$image->title, ['class' => 'form-control','data-required'=>'true','disabled'])
+}}
+                          </div>
                         </div>
                          <div class="line line-dashed line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">Description</label>
                           <div class="col-sm-9">
-                            <textarea id="summernote" name="description" class="form-control">{!!$image->description!!}</textarea> 
+                            <textarea id="summernote" name="description" class="form-control" disabled="true">{!!$image->description!!}</textarea> 
                           </div>
                         </div>
                         <div class="line line-dashed line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">Status</label>
                           <div class="col-sm-9">
-                            <select name="status">
+                            <select name="status" disabled="true">
                          <option value="">select</option>
                          <option value="A" {{$image->status=='A'?'selected':''}}>Active</option>
                          <option value="I" {{$image->status=='I'?'selected':''}}>Inactive</option>
@@ -50,41 +53,16 @@
                     
                       
 
-<!--                        <div class="line line-dashed line-lg pull-in"></div>
+                       <div class="line line-dashed line-lg pull-in"></div>
                         <div class="form-group">
                             <div class="col-sm-9">
                             <img src="{{asset('/images/gallery/'.$image->image)}}" alt="Park" style="width:30%">
                            </div>
-                     </div> -->
-                      
-                      <div class="form-group">
-                          <label class="col-sm-3 control-label">Gallery Images(Min Dimension:800x600)</label>
-                          <div class="col-sm-9">
-
-                              <div class="input_fields_wrap">
-                                  
-                                  
-                                    <div style="margin-bottom:10px;">
-                                         <input type="file" name="image_name" class="GalleryImage" id="img0"/> &nbsp 
-                                    </div>
-                                    @if(isset($image))
-                                    <img src="{{asset('/images/gallery/'.$image->image)}}" width="500">
-                                    @endif
-
-                             </div>      
-                       </div>
                      </div>
-
-
-
                   <footer class="panel-footer text-right bg-light lter">
                        
-                          <input type="submit" class="btn btn-success btn-s-xs" value="Submit"/>
-
-                        <a href="{{url('/admin/gallery')}}" class="btn btn-danger">Cancel</a>
-                      </footer>
-
-
+                        <a href="{{url('/admin/gallery/edit')}}" class="btn btn-success">Edit</a>
+                        <a href="{{url('/admin/gallery/')}}" class="btn btn-danger">Back</a>
                       </footer>
 
 

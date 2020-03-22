@@ -90,7 +90,7 @@ class GalleryController extends Controller
                 //dd($id);
         $gallery=Gallery::find($id);
         //dd($banner);
-        return view("admin.gallery.edit")->withGallery($gallery);
+        return view("admin.gallery.edit")->withImage($gallery);
     }
 
     /**
@@ -102,7 +102,33 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+        // $gallery=new Gallery;
+        $gallery=Gallery::find($id);
+
+        $variable=$request->toArray();
+        foreach ($variable as $key => $value) {
+           if($key!='_token' & $key!='image_name' & $key!='_method')
+            $gallery->$key=$value;
+        }
+
+        $image=$request->file('image_name');
+        //if($request->hasFile('image_name')){
+        //dd($image);
+        $filename='gallery'.'-'.rand().time().'.'.$image->getClientOriginalExtension();//part of image intervention library
+        $location=public_path('/images/gallery/'.$filename);
+
+        // use $location='images/'.$filename; on a server
+
+        Image::make($image)->resize(800,600)->save($location);
+        $gallery->image=$filename;
+        $gallery->save();        
+
+        session::flash('success', 'The Gallery Image Has Been Added Successfully!');
+        return redirect()->route('gallery.index');
+
+
+
     }
 
     /**

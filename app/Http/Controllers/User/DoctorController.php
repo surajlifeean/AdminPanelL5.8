@@ -4,9 +4,9 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Gallery;
+use App\Doctor;
 
-class GalleryController extends Controller
+class DoctorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $gallery=Gallery::where('status','A')->get();
-        #dd($gallery);
-
-        return view('gallery')->withGallery($gallery);
-        
+        #$doctor=Doctor::where('status','A')->get();
+     
+        return view('doctorsChamber');
+   
     }
 
   
