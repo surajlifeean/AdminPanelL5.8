@@ -62,16 +62,11 @@
                   <footer class="panel-footer text-right bg-light lter">
                        
                         <a href="{{url('/admin/gallery/edit')}}" class="btn btn-success">Edit</a>
-                        <!-- <a href="{{url('/admin/gallery/')}}" class="btn btn-danger">Delete</a> -->
+                        <a href="{{url('/admin/gallery/')}}" class="btn btn-danger">Back</a>
                       </footer>
 
-                       <button class="btn btn-danger btn-rounded formConfirm" data-form="#frmDelete-{{$image->id}}" data-title="Delete Image" data-message="Are you sure, you want to delete this Image?" >Delete
-                                    </button>
 
-            {{ Form::open(['method' => 'DELETE', 'class'=>'frmDelete','route' =>['gallery.destroy', $image->id]]) }}
-                <!-- {{ Form::hidden('id', $image->id) }} -->
-              <!-- {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }} -->
-            {{ Form::close() }}
+
 
 
 

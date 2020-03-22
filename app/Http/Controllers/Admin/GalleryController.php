@@ -87,7 +87,10 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        //
+                //dd($id);
+        $gallery=Gallery::find($id);
+        //dd($banner);
+        return view("admin.gallery.edit")->withGallery($gallery);
     }
 
     /**
@@ -112,4 +115,16 @@ class GalleryController extends Controller
     {
         dd($id);
     }
+
+    public function delete($id,Request $request)
+    {   
+        $gallery=Gallery::find($id);
+        $gallery->delete();
+        $request->session()->flash('success', 'The Gallery Item has been deleted.');
+        return redirect('/admin/gallery');
+        
+        // dd($request); 
+    }
+
+
 }

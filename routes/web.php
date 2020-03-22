@@ -58,7 +58,7 @@ Route::prefix('admin')->group(function() {
 	Route::get('/', 'AdminController@index')->name('admin');
 	Route::resource('contact', 'Admin\ContactController');
 	Route::resource('gallery', 'Admin\GalleryController');
-
+    Route::get('gallery/delete/{id}', array('as' => 'admin.gallery.delete', 'uses' => 'Admin\GalleryController@delete'));
 
 
 });
