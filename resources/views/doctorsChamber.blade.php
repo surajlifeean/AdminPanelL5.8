@@ -235,18 +235,22 @@ div.user-menu div.user-menu-content:not(.active){
  @section('content')
 
 <div class="container">
+
+
+@foreach($doctors as $doctor)
+
     <div class="row user-menu-container square">
         <div class="col-md-7 user-details">
             <div class="row coralbg white">
                 <div class="col-md-6 no-pad">
                     <div class="user-pad">
-                        <h3>Dr. Sunil Baran Das Chakraborty ,</h3>
-                        <h4 class="white"><i class="fa fa-check-circle-o"></i>MD, DM(Gastro), (SGPG)</h4>
+                        <h3>{{$doctor->name}} ,</h3>
+                        <h4 class="white"><i class="fa fa-check-circle-o"></i>{!!"<p>".$doctor->qualification."</p>"!!}</h4>
                     </div>
                 </div>
                 <div class="col-md-6 no-pad">
                     <div class="user-image">
-                        <img src="https://farm7.staticflickr.com/6163/6195546981_200e87ddaf_b.jpg" class="img-responsive thumbnail">
+                        <img src="{{asset('/images/doctors/'.$doctor->image)}}" class="img-responsive thumbnail">
                     </div>
                 </div>
             </div>
@@ -267,10 +271,12 @@ div.user-menu div.user-menu-content:not(.active){
                 </h3>
                 <ul class="user-menu-list">
                     <li>
-						<p> Mon 7:30 AM - 9:30 AM |6:00 PM - 7:00 PM</p>
-						<p> Tue 7:30 AM - 9:30 AM</p>
-               			<p>	Wed 6:00 PM - 7:00 PM</p>
-						<p> Friday 6:00 PM - 7:00 PM</p>
+                        @php
+                            $time=explode(",",$doctor->visit_hours)
+                        @endphp
+                        @foreach($time as $t)
+						<p>{{$t}}</p>
+                        @endforeach
                     </li>
 
                 </ul>
@@ -279,57 +285,9 @@ div.user-menu div.user-menu-content:not(.active){
 
         </div>
     </div>
-
+@endforeach
 <!--     new doctor  -->
 
-
-
-
-
-    <div class="row user-menu-container square">
-        <div class="col-md-7 user-details">
-            <div class="row coralbg white">
-                <div class="col-md-6 no-pad">
-                    <div class="user-pad">
-                        <h3>Dr. Sunil Baran Das Chakraborty ,</h3>
-                        <h4 class="white"><i class="fa fa-check-circle-o"></i>MD, DM(Gastro), (SGPG)</h4>
-                    </div>
-                </div>
-                <div class="col-md-6 no-pad">
-                    <div class="user-image">
-                        <img src="https://farm7.staticflickr.com/6163/6195546981_200e87ddaf_b.jpg" class="img-responsive thumbnail">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-			   	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-				    <div class="text">
-						    	<span>Want To Book An Appointment?</span>
-						    	<span>Call Us: + 1235 2355 98</span>
-				    </div>
-			</div>
-
-        </div>
-
-        <div class="col-md-4 user-menu user-pad">
-            <div class="user-menu-content active">
-                <h3>
-                    Visit Dates And Time
-                </h3>
-                <ul class="user-menu-list">
-                    <li>
-						<p> Mon 7:30 AM - 9:30 AM |6:00 PM - 7:00 PM</p>
-						<p> Tue 7:30 AM - 9:30 AM</p>
-               			<p>	Wed 6:00 PM - 7:00 PM</p>
-						<p> Friday 6:00 PM - 7:00 PM</p>
-                    </li>
-
-                </ul>
-            </div>
-
-
-        </div>
-    </div>
 </div>
 
 

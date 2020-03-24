@@ -1,5 +1,5 @@
  @extends('admin.adminmain')
- @section('title',"Gallery")
+ @section('title',"Admin | Doctor")
  @section('stylesheets')
 
  @endsection
@@ -11,27 +11,42 @@
 
  			<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
                 <li><a href=""><i class="fa fa-home"></i>Home</a></li>>
-                <li><a href="">Gallery management</a></li>>
-                <li><a href="">View Image</a></li>
+                <li><a href="">Doctor Management</a></li>>
+                <li><a href="">Details</a></li>
             </ul>
 
                        <header class="panel-heading">
-                        <span class="h4">Image Details</span>
+                        <span class="h4">Doctor Details</span>
                       </header>
-                      {{Form::model($image,['route' =>['gallery.update',$image->id],'method'=>'PUT','files' => true, 'class'=>'form-horizontal course-form','data-parsley-validate'])}}
+                      {{Form::model($doctor,['route' =>['doctor.update',$doctor->id],'method'=>'PUT','files' => true, 'class'=>'form-horizontal course-form','data-parsley-validate'])}}
 
                       <div class="panel-body">                   
                          <div class="form-group">
-                          <label class="col-sm-3 control-label">Image Title</label>
+                          <label class="col-sm-3 control-label">Name</label>
                           <div class="col-sm-9">
-                           <input type="text" name="title" class="form-control" value="{{$image->title}}" data-required="true" placeholder="Title" required>   
+                           <input type="text" name="name" class="form-control" value="{{$doctor->name}}" data-required="true" placeholder="Name" required>   
+                         </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-sm-3 control-label">Qualification</label>
+                          <div class="col-sm-9">
+                           <input type="text" name="qualification" class="form-control" value="{{$doctor->qualification}}" data-required="true" placeholder="Qualification" required>   
+                         </div>
+                        </div>
+
+
+                        <div class="form-group">
+                          <label class="col-sm-3 control-label">Years Of Expeience</label>
+                          <div class="col-sm-9">
+                           <input type="text" name="yoe" class="form-control" value="{{$doctor->yoe}}" data-required="true" placeholder="Years Of Experience" required>   
                          </div>
                         </div>
                          <div class="line line-dashed line-lg pull-in"></div>
                         <div class="form-group">
-                          <label class="col-sm-3 control-label">Description</label>
+                          <label class="col-sm-3 control-label">Visit Hours</label>
                           <div class="col-sm-9">
-                            <textarea id="summernote" name="description" class="form-control">{!!$image->description!!}</textarea> 
+                            <textarea id="summernote" name="visit_hours" class="form-control">{!!$doctor->visit_hours!!}</textarea> 
                           </div>
                         </div>
                         <div class="line line-dashed line-lg pull-in"></div>
@@ -40,8 +55,8 @@
                           <div class="col-sm-9">
                             <select name="status">
                          <option value="">select</option>
-                         <option value="A" {{$image->status=='A'?'selected':''}}>Active</option>
-                         <option value="I" {{$image->status=='I'?'selected':''}}>Inactive</option>
+                         <option value="A" {{$doctor->status=='A'?'selected':''}}>Active</option>
+                         <option value="I" {{$doctor->status=='I'?'selected':''}}>Inactive</option>
                            </select>
 
                           </div>
@@ -50,25 +65,19 @@
                     
                       
 
-<!--                        <div class="line line-dashed line-lg pull-in"></div>
-                        <div class="form-group">
-                            <div class="col-sm-9">
-                            <img src="{{asset('/images/gallery/'.$image->image)}}" alt="Park" style="width:30%">
-                           </div>
-                     </div> -->
                       
                       <div class="form-group">
-                          <label class="col-sm-3 control-label">Gallery Images(Min Dimension:800x600)</label>
+                          <label class="col-sm-3 control-label">Doctor Images(Min Dimension:300x200)</label>
                           <div class="col-sm-9">
 
                               <div class="input_fields_wrap">
                                   
                                   
                                     <div style="margin-bottom:10px;">
-                                         <input type="file" name="image_name" class="GalleryImage" id="img0"/> &nbsp 
+                                         <input type="file" name="image" class="GalleryImage" id="img0"/> &nbsp 
                                     </div>
-                                    @if(isset($image))
-                                    <img src="{{asset('/images/gallery/'.$image->image)}}" width="500">
+                                    @if(isset($doctor->image))
+                                    <img src="{{asset('/images/doctors/'.$doctor->image)}}" width="500">
                                     @endif
 
                              </div>      
@@ -81,7 +90,7 @@
                        
                           <input type="submit" class="btn btn-success btn-s-xs" value="Submit"/>
 
-                        <a href="{{url('/admin/gallery')}}" class="btn btn-danger">Cancel</a>
+                        <a href="{{url('/admin/doctor')}}" class="btn btn-danger">Cancel</a>
                       </footer>
 
 

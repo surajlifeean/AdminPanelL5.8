@@ -15,9 +15,9 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        #$doctor=Doctor::where('status','A')->get();
-     
-        return view('doctorsChamber');
+        $doctor=Doctor::where('status','A')->get();
+             
+        return view('doctorsChamber')->withDoctors($doctor);
    
     }
 

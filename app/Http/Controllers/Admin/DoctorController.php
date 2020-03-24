@@ -18,7 +18,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        $doctors=Doctor::all();
+        return view('admin.doctor.index')->withDoctors($doctors);
     }
 
     /**
@@ -73,7 +74,8 @@ class DoctorController extends Controller
      */
     public function show($id)
     {
-        //
+        $doctor=Doctor::find($id);
+        return view('admin.doctor.show')->withDoctor($doctor);
     }
 
     /**
@@ -84,7 +86,10 @@ class DoctorController extends Controller
      */
     public function edit($id)
     {
-        //
+                        //dd($id);
+        $doctor=Doctor::find($id);
+        //dd($banner);
+        return view("admin.doctor.edit")->withDoctor($doctor);
     }
 
     /**
@@ -96,7 +101,33 @@ class DoctorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $doctor=Doctor::find($id);
+
+        $variable=$request->toArray();
+        foreach ($variable as $key => $value) {
+           if($key!='_token' & $key!='image' & $key!='_method')
+            $doctor->$key=$value;
+        }
+
+        $image=$request->file('image');
+
+        if($request->hasFile('image')){
+        //dd($image);
+        $filename='doctor'.'-'.rand().time().'.'.$image->getClientOriginalExtension();//part of image intervention library
+        $location=public_path('/images/doctors/'.$filename);
+
+        // use $location='images/'.$filename; on a server
+
+        Image::make($image)->resize(300,200)->save($location);
+        $doctor->image=$filename;
+
+    }
+
+        $doctor->save();        
+
+        session::flash('success', 'The Doctor details Has Been Updates Successfully!');
+        return redirect()->route('doctor.index');
+
     }
 
     /**
@@ -109,4 +140,17 @@ class DoctorController extends Controller
     {
         //
     }
+
+
+    public function delete($id,Request $request)
+    {   
+        $doctor=Doctor::find($id);
+        $doctor->delete();
+        $request->session()->flash('success', 'The Doctor Details Has Been Deleted.');
+        return redirect('/admin/doctor');
+        
+        // dd($request); 
+    }
+
+
 }

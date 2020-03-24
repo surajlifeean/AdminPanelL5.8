@@ -62,6 +62,5 @@ Route::prefix('admin')->group(function() {
 	Route::resource('gallery', 'Admin\GalleryController');
 	Route::resource('doctor', 'Admin\DoctorController');
     Route::get('gallery/delete/{id}', array('as' => 'admin.gallery.delete', 'uses' => 'Admin\GalleryController@delete'));
-
-
+    Route::get('doctor/delete/{id}', array('as' => 'admin.doctor.delete', 'uses' => 'Admin\DoctorController@delete'));
 });

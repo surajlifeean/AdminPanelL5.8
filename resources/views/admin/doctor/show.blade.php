@@ -11,40 +11,59 @@
 
  			<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
                 <li><a href=""><i class="fa fa-home"></i>Home</a></li>>
-                <li><a href="">Gallery management</a></li>>
-                <li><a href="">View Image</a></li>
+                <li><a href="">Doctor management</a></li>>
+                <li><a href="">View details</a></li>
             </ul>
 
                        <header class="panel-heading">
-                        <span class="h4">Image Details</span>
+                        <span class="h4">Doctor Details</span>
                       </header>
-                      {{Form::model($image,['route' =>['gallery.update',$image->id],'method'=>'PUT','files' => true, 'class'=>'form-horizontal course-form','data-parsley-validate'])}}
+                      {{Form::model($doctor,['route' =>['doctor.update',$doctor->id],'method'=>'PUT','files' => true, 'class'=>'form-horizontal course-form','data-parsley-validate'])}}
 
                       <div class="panel-body">                   
                          <div class="form-group">
-                          <label class="col-sm-3 control-label">Image Title</label>
+                          <label class="col-sm-3 control-label">Doctor name</label>
                           <div class="col-sm-9">
-<!--                             <input type="text" name="title" class="form-control"  data-required="true" placeholder="Title" required>  
- -->
-                            {{Form::label('title',$image->title, ['class' => 'form-control','data-required'=>'true','disabled'])
-}}
+
+                            {{Form::label('name',$doctor->name, ['class' => 'form-control','data-required'=>'true','disabled'])}}
                           </div>
                         </div>
-                         <div class="line line-dashed line-lg pull-in"></div>
-                        <div class="form-group">
-                          <label class="col-sm-3 control-label">Description</label>
-                          <div class="col-sm-9">
-                            <textarea id="summernote" name="description" class="form-control" disabled="true">{!!$image->description!!}</textarea> 
-                          </div>
-                        </div>
+
                         <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                          <label class="col-sm-3 control-label">Qualification</label>
+                          <div class="col-sm-9">
+                            {{Form::label('qualification',$doctor->qualification, ['class' => 'form-control','data-required'=>'true','disabled'])}} 
+                          </div>
+                        </div>
+                        
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                          <label class="col-sm-3 control-label">Years Of Experience</label>
+                          <div class="col-sm-9">
+
+                            {{Form::label('yoe',$doctor->yoe, ['class' => 'form-control','data-required'=>'true','disabled'])}}
+                          </div>
+                        </div>
+                        
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                          <label class="col-sm-3 control-label">Visit Hours</label>
+                          <div class="col-sm-9">
+                            <textarea id="summernote" name="visit_hours" class="form-control" disabled="true">{!!$doctor->visit_hours!!}</textarea> 
+                          </div>
+                        </div>
+
+                        <div class="line line-dashed line-lg pull-in"></div>
+                      
                         <div class="form-group">
                           <label class="col-sm-3 control-label">Status</label>
                           <div class="col-sm-9">
                             <select name="status" disabled="true">
                          <option value="">select</option>
-                         <option value="A" {{$image->status=='A'?'selected':''}}>Active</option>
-                         <option value="I" {{$image->status=='I'?'selected':''}}>Inactive</option>
+                         <option value="A" {{$doctor->status=='A'?'selected':''}}>Active</option>
+                         <option value="I" {{$doctor->status=='I'?'selected':''}}>Inactive</option>
                            </select>
 
                           </div>
@@ -56,13 +75,13 @@
                        <div class="line line-dashed line-lg pull-in"></div>
                         <div class="form-group">
                             <div class="col-sm-9">
-                            <img src="{{asset('/images/gallery/'.$image->image)}}" alt="Park" style="width:30%">
+                            <img src="{{asset('/images/doctors/'.$doctor->image)}}" alt="Park" style="width:30%">
                            </div>
                      </div>
                   <footer class="panel-footer text-right bg-light lter">
                        
-                        <a href="{{url('/admin/gallery/edit')}}" class="btn btn-success">Edit</a>
-                        <a href="{{url('/admin/gallery/')}}" class="btn btn-danger">Back</a>
+<!--                         <a href="{{url('/admin/doctor/edit')}}" class="btn btn-success">Edit</a> -->
+                        <a href="{{url('/admin/doctor/')}}" class="btn btn-danger">Back</a>
                       </footer>
 
 

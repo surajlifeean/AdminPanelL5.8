@@ -1,5 +1,5 @@
  @extends('admin.adminmain')
- @section('title',"image")
+ @section('title',"Admin | Doctor")
  @section('stylesheets')
 
  	  <link href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
@@ -18,7 +18,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">image</h1>
+          <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
           <p class="mb-4"> 
           	<!-- <a target="_blank" href="https://datatables.net">official DataTables documentation</a>. -->
           </p>
@@ -26,64 +26,64 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Listing of Gallery Images</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Listing of Doctors</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Image</th>
-                      <th>Title</th>
-                      <th>Description</th>
+                      <th>Name</th>
+                      <th>Qualification</th>
+                      <th>Exp</th>
                       <th>Status</th>
                       <th>Added On</th>
+                      <th>Actions</th>
                       <!-- <th>Salary</th> -->
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Image</th>
-                      <th>Title</th>
-                      <th>Description</th>
+                      <!-- <th>Image</th> -->
+                      <th>Name</th>
+                      <th>Qualification</th>
+                      <th>Exp</th>
                       <th>Status</th>
                       <th>Added On</th>
+                      <th>Actions</th>
+
                       <!-- <th>Salary</th> -->
                     </tr>
                   </tfoot>
                   <tbody>
-                  	@foreach($gallery as $image)
+                  	@foreach($doctors as $doctor)
                   	 <tr>
-                      <td><img src="{{asset('/images/gallery/'.$image->image)}}" alt="Park" style="width:20%">
-                      <!-- <i class="fas fa-pen"></i> -->
-                      <a href="{{route('gallery.edit',$image->id)}}"  class="btn"><i class="fas fa-pen"></i></a>
-                      <a href="{{route('gallery.show',$image->id)}}" data-toggle="tooltip" title="banner Details" class="btn">
+                      <td>{{$doctor->name}}</td>
+                      <td>{{$doctor->qualification}}</td>
+                      <td>{{$doctor->yoe}}</td>
+                      <td>{{$doctor->status=='A'?'Active':'Inactive'}}</td>
+                      <td>{{$doctor->created_at}}</td>
+                      <td>
+                      <a href="{{route('doctor.edit',$doctor->id)}}"  class="btn"><i class="fas fa-pen"></i></a>
+                      <a href="{{route('doctor.show',$doctor->id)}}" data-toggle="tooltip" title="Doctor Details" class="btn">
                       <i class="fas fa-eye"></i>
                       </a>
                       <!-- &nbsp &nbsp &nbsp<i class="fas fa-trash"></i> -->
-                      <button class="formConfirm" data-form="#frmDelete-{{$image->id}}" data-title="Delete banner" data-message="Are you sure, you want to delete this Image?" >
+                      <button class="formConfirm" data-form="#frmDelete-{{$doctor->id}}" data-title="Delete Details" data-message="Are you sure, you want to delete this Entry?" >
                           <i title="Delete" style="margin-right: 0;" class="fas fa-trash" aria-hidden="true"></i>
 
                       </button>
                       {!! Form::open(array(
-                              'url' => route('admin.gallery.delete', array($image->id)),
+                              'url' => route('admin.doctor.delete', array($doctor->id)),
                               'method' => 'get',
                               'style' => 'display:none',
-                              'id' => 'frmDelete-'.$image->id
+                              'id' => 'frmDelete-'.$doctor->id
                           ))
                       !!}
                       {!! Form::submit('Submit') !!}
                       {!! Form::close() !!}
-
-
-
-
-
                     </td>
-                      <td>{{$image->title}}</td>
-                      <td>{{strlen($image->description)>50?substr($image->description,0,50).'...':$image->description}}</td>
-                      <td>{{$image->status=='A'?'Active':'Inactive'}}</td>
-                      <td>{{$image->created_at}}</td>
+
                     </tr>
                   	@endforeach
                     

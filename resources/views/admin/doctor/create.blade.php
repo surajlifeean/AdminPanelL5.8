@@ -1,5 +1,5 @@
  @extends('admin.adminmain')
- @section('title',"Gallery")
+ @section('title',"Admin | Doctor")
  @section('stylesheets')
 
  @endsection
