@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Contact;
+use App\Doctor;
+
 
 class AdminController extends Controller
 {
@@ -24,6 +27,12 @@ class AdminController extends Controller
     public function index()
     {
         // dd("admin");
-        return view('admin.home');
+        $contacts=Contact::count();
+        $doctors=Doctor::count();
+
+        $var['doctor']=$doctors;
+        $var['contact']=$contacts;
+        
+        return view('admin.home')->withVar($var);
     }
 }

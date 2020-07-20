@@ -23,7 +23,7 @@
           <div class="col-md-6 ftco-animate">
             <h1 class="mb-4">Welcome to Dream Search Health Point</h1>
             <p></p>
-            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
+            <p><a href="/dshp/contact" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
           </div>
         </div>
         </div>

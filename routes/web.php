@@ -61,6 +61,9 @@ Route::prefix('admin')->group(function() {
 	Route::resource('contact', 'Admin\ContactController');
 	Route::resource('gallery', 'Admin\GalleryController');
 	Route::resource('doctor', 'Admin\DoctorController');
+    Route::resource('course-management', 'Admin\CourseManagementController');
     Route::get('gallery/delete/{id}', array('as' => 'admin.gallery.delete', 'uses' => 'Admin\GalleryController@delete'));
     Route::get('doctor/delete/{id}', array('as' => 'admin.doctor.delete', 'uses' => 'Admin\DoctorController@delete'));
+    Route::get('course-managementr/delete/{id}', array('as' => 'admin.course-management.delete', 'uses' => 'Admin\CourseManagementController@delete'));
+    
 });

@@ -61,7 +61,7 @@
 @section('scripts')
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 	<script>
-	baguetteBox.run('.tz-gallery');
+	   baguetteBox.run('.tz-gallery');
 	</script>
 
 @endsection
