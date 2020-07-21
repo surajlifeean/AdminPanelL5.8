@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contact;
 use App\Doctor;
-
+use App\Course;
 
 class AdminController extends Controller
 {
@@ -29,10 +29,14 @@ class AdminController extends Controller
         // dd("admin");
         $contacts=Contact::count();
         $doctors=Doctor::count();
+        $course=Course::select('name')->groupBy('name')->get();
+
+        // dd(count($course));
+
 
         $var['doctor']=$doctors;
         $var['contact']=$contacts;
-        
+        $var['course']=count($course);
         return view('admin.home')->withVar($var);
     }
 }

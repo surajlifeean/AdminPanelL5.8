@@ -54,7 +54,16 @@
                     </tr>
                   </tfoot>
                   <tbody>
+                    @if(count($courses)>0)
+                          @php $prev=''; @endphp
+                          
+                    @endif
+
                   	@foreach($courses as $course)
+                          @php $curr=$course['name'];
+                           @endphp
+
+                    @if($prev!=$curr)
                   	 <tr>
                       <td>{{$course->name}}</td>
                       <td>{{$course->duration}}</td>
@@ -82,6 +91,11 @@
                     </td>
 
                     </tr>
+                      @php $prev=$course['name'];
+                      @endphp
+
+                    @endif
+
                   	@endforeach
                     
                   </tbody>

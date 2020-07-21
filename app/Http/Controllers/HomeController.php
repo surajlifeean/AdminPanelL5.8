@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Course;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $course=Course::select('name','duration')->groupby('name','duration')->get();
+        // dd($course);
+        return view('home')->withCourses($course);
     }
 }

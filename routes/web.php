@@ -30,6 +30,7 @@ Route::get('/courses', function () {
 
 Route::get('/contact', 'User\ContactController@index')->name('contact.index');
 Route::post('/contact', 'User\ContactController@store')->name('contact.store');
+Route::resource('courses', 'User\CourseController');
 Route::get('/gallery', 'User\GalleryController@index')->name('gallery.index');
 Route::get('/doctors-chamber', 'User\DoctorController@index')->name('doctor.index');
 
