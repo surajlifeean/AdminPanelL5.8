@@ -40,7 +40,13 @@ class CourseManagementController extends Controller
      */
     public function store(Request $request)
     {
-                        // dd($request);
+        $name=$request->name;
+        $coursePresent=Course::where('name',$name)->get();
+        if(count($coursePresent)>0)
+            foreach ($coursePresent as $value) {
+              
+                 $value->delete();
+            }
 
         // dd($request['session_name']);
         $eligibility=$request['eligibility'];
@@ -65,7 +71,7 @@ class CourseManagementController extends Controller
             $course->save();
         }
 
-        session::flash('success', 'The Course Details Has Been Added Successfully!');
+        session::flash('success', 'The Course Details Has Been Updated Successfully!');
         return redirect()->route('course-management.index');
     }
 
@@ -77,7 +83,9 @@ class CourseManagementController extends Controller
      */
     public function show($id)
     {
-        //
+        $course=Course::where('name',$id)->get();
+        // dd($course);
+        return view("admin.course.show")->withCourse($course);
     }
 
     /**
@@ -88,7 +96,9 @@ class CourseManagementController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course=Course::where('name',$id)->get();
+        // dd($course);
+        return view("admin.course.edit")->withCourse($course);
     }
 
     /**

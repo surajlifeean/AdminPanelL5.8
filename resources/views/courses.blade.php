@@ -34,7 +34,7 @@
 							</p>
 							<h3><a href="#">{{$course['name']}}</a></h3>
 <!-- 							<p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p> -->
-							<p><a href="#" class="btn btn-primary">Apply now</a></p>
+							<p><a href="{{route('courses.show',$course['name'])}}" class="btn btn-primary">Details</a></p>
 						</div>
 					</div>
 					@endforeach

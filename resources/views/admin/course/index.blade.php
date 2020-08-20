@@ -70,8 +70,8 @@
                       <td>{{$course->status=='A'?'Active':'Inactive'}}</td>
                       <td>{{$course->created_at}}</td>
                       <td>
-                      <a href="{{route('course-management.edit',$course->id)}}"  class="btn"><i class="fas fa-pen"></i></a>
-                      <a href="{{route('course-management.show',$course->id)}}" data-toggle="tooltip" title="Course Details" class="btn">
+                      <a href="{{route('course-management.edit',$course->name)}}"  class="btn"><i class="fas fa-pen"></i></a>
+                      <a href="{{route('course-management.show',$course->name)}}" data-toggle="tooltip" title="Course Details" class="btn">
                       <i class="fas fa-eye"></i>
                       </a>
                       <!-- &nbsp &nbsp &nbsp<i class="fas fa-trash"></i> -->

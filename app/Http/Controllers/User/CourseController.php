@@ -50,7 +50,12 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        //
+        // dd($id);
+        $course=Course::where('name',$id)->get();
+        $snames=Course::select('session_name')->where('name','GNM nursing')->groupby('session_name')->get();
+
+        return view('course-details')->withCourse($course)->withSname($snames);
+
     }
 
     /**
