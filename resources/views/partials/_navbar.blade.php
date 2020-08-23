@@ -38,7 +38,7 @@
 	        	<li id="About" class="nav-item"><a href="/dshp/about" class="nav-link">About</a></li>
 	        	<li id="Courses" class="nav-item"><a href="/dshp/courses" class="nav-link">Courses</a></li>
 	        	<li id="Gallery" class="nav-item"><a href="/dshp/gallery" class="nav-link">Gallery</a></li>
-	        	<!-- <li id="Notice" class="nav-item"><a href="/dshp/notice" class="nav-link">Notice</a></li> -->
+	        	<li id="Gallery" class="nav-item"><a href="/dshp/registration" class="nav-link">Registration</a></li>
 	            <li id="Doctors_chamber" class="nav-item"><a href="/dshp/doctors-chamber" class="nav-link">Doctors' Chamber</a></li>
 	        	<li id="Affiliations" class="nav-item"><a href="/dshp/affiliations" class="nav-link">Affiliations</a></li>
 	          <li id="Contact" class="nav-item"><a href="/dshp/contact" class="nav-link">Contact</a></li>
