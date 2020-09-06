@@ -101,12 +101,24 @@
 
                         <div class="line line-dashed line-lg pull-in"></div>
                         <div class="form-group">
-                          <label class="col-sm-3 control-label">Status</label>
+<!--                           <label class="col-sm-3 control-label">Status</label>
                           <div class="col-sm-9">
                             <select name="status" required disabled>
                          <option value="">select</option>
                          <option value="A">Active</option>
-                         <option value="I">Inactive</option>
+                         <option value="I">Inactive</option> -->
+
+                          <label class="col-sm-3 control-label">Status</label>
+                          <div class="col-sm-9">
+                            <select name="status" disabled="true">
+                         <option value="">select</option>
+                         <option value="A" {{$c->status=='A'?'selected':''}}>Active</option>
+                         <option value="I" {{$c->status=='I'?'selected':''}}>Inactive</option>
+                           </select>
+
+                          </div>
+
+
                            </select>
 
                           </div>
@@ -124,6 +136,10 @@
                       </footer>
 
  -->
+
+                  <footer class="panel-footer text-right bg-light lter">
+                                    <a href="{{route('course-management.index')}}" class="btn btn-danger" style="width: 100px;">Back</a>
+                  </footer>
 
                      </div>
 

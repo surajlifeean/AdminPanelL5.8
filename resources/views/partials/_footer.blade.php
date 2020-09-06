@@ -42,7 +42,7 @@
             </div>
           </div> -->
           <div class="col-md-6 col-lg-4">
-            <div class="ftco-footer-widget mb-5 ml-md-4">
+ <!--            <div class="ftco-footer-widget mb-5 ml-md-4">
               <h2 class="ftco-heading-2">Links</h2>
               <ul class="list-unstyled">
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
@@ -51,7 +51,7 @@
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
               </ul>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-6 col-lg-4">
   <!--           <div class="ftco-footer-widget mb-5">

@@ -18,31 +18,34 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
 
-Route::get('/registration', function () {
-    return view('registration');
-});
+Route::get('/affiliations', function () {
+    return view('affiliations');
+})->name('affiliations');
+// Route::get('/registration', function () {
+//     return view('registration');
+// });
 
-Route::get('/courses', function () {
-    return view('courses');
-});
+// Route::get('/courses', function () {
+//     return view('courses');
+// });
 
 // Route::get('/contact', function () {
 //     return view('contact');
 // });
-
-Route::get('/contact', 'User\ContactController@index')->name('contact.index');
-Route::post('/contact', 'User\ContactController@store')->name('contact.store');
+Route::get('/registration', 'User\RegistrationController@index')->name('student-registration.index');
+Route::post('/registration', 'User\RegistrationController@store')->name('student-registration.store');
+Route::get('/contact', 'User\ContactController@index')->name('student-contact.index');
+Route::post('/contact', 'User\ContactController@store')->name('student-contact.store');
 Route::resource('courses', 'User\CourseController');
-Route::get('/gallery', 'User\GalleryController@index')->name('gallery.index');
-Route::get('/doctors-chamber', 'User\DoctorController@index')->name('doctor.index');
+Route::resource('test', 'TestController');
+Route::get('/gallery', 'User\GalleryController@index')->name('gallery-home.index');
+Route::get('/doctors-chamber', 'User\DoctorController@index')->name('doctor-chamber.index');
 
 
 
-Route::get('/affiliations', function () {
-    return view('affiliations');
-});
+
 
 Route::get('/notice', function () {
     return view('notice');
@@ -55,7 +58,7 @@ Route::get('/notice', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 
 Route::prefix('admin')->group(function() {
@@ -67,6 +70,7 @@ Route::prefix('admin')->group(function() {
 	Route::resource('gallery', 'Admin\GalleryController');
 	Route::resource('doctor', 'Admin\DoctorController');
     Route::resource('course-management', 'Admin\CourseManagementController');
+    Route::resource('registration', 'Admin\RegistrationController');
     Route::get('gallery/delete/{id}', array('as' => 'admin.gallery.delete', 'uses' => 'Admin\GalleryController@delete'));
     Route::get('doctor/delete/{id}', array('as' => 'admin.doctor.delete', 'uses' => 'Admin\DoctorController@delete'));
     Route::get('course-managementr/delete/{id}', array('as' => 'admin.course-management.delete', 'uses' => 'Admin\CourseManagementController@delete'));

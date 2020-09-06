@@ -24,9 +24,10 @@ class ContactController extends Controller
     {
         return view('contact');
     }
-        public function store(Request $request)
+
+    public function store(Request $request)
     {
-        // dd($request);
+       // dd($request);
        $support=new Contact;
        $support->subject   =$request->subject;
        $support->msg   =$request->msg;
@@ -37,8 +38,14 @@ class ContactController extends Controller
        // print_r($support);
        // dd();
        $support->save();
-        session::flash('success', 'The Message Has Been Sent Successfully!');
-         return redirect()->route('contact.index');
+       session::flash('success', 'The Message Has Been Sent Successfully!');
+       if($request->page==1){
+          return redirect()->route('home');
+        }
+        else{
+          return redirect()->route('contact.index');
+
+        }
     }
     // public function index()
     // {

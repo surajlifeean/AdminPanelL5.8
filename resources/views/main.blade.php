@@ -4,7 +4,6 @@
     <title>@yield('title')</title>
     @include('partials._header')
     @yield('stylesheets')
-  
   </head>
   <body>
     @include('partials._navbar')

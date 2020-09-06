@@ -64,6 +64,21 @@
         </div>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegistraion" aria-expanded="true" aria-controls="collapseRegistraion">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Registration</span>
+        </a>
+        <div id="collapseRegistraion" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <!-- <a class="collapse-item" href="{{route('course-management.create')}}">Add</a> -->
+            <a class="collapse-item" href="{{route('registration.index')}}">List</a>
+         </div>
+        </div>
+      </li>
+
+
+
 
 
 

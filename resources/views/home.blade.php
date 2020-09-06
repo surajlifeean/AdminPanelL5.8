@@ -10,7 +10,7 @@
           <div class="col-md-6 ftco-animate">
             <h1 class="mb-4">Education Needs Complete Solution</h1>
             <p></p>
-            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
+            <p><a href="{{route('student-contact.index')}}" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
           </div>
         </div>
         </div>
@@ -23,7 +23,7 @@
           <div class="col-md-6 ftco-animate">
             <h1 class="mb-4">Welcome to Dream Search Health Point</h1>
             <p></p>
-            <p><a href="/dshp/contact" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
+            <p><a href="{{route('student-contact.index')}}" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
           </div>
         </div>
         </div>
@@ -267,13 +267,15 @@
 		            <h2 class="mb-4">Request A Call</h2>
 		            <p>Still confused about your career choice? Fill in your details and get a call back.</p>
 		          </div>
-		          <form action="#" class="appointment-form ftco-animate">
+		          <!-- <form action="#" class="appointment-form ftco-animate"> -->
+		          	            {{Form::open(['route' => 'student-contact.store','files' => true, 'class'=>'appointment-form ftco-animate','data-parsley-validate'])}}
+		          	           <input type="hidden" name="page" class="form-control" value="1">
 		    				<div class="d-md-flex">
 			    				<div class="form-group">
-			    					<input type="text" class="form-control" placeholder="First Name">
+			    					<input type="text" name="name" class="form-control" placeholder="Name">
 			    				</div>
 			    				<div class="form-group ml-md-4">
-			    					<input type="text" class="form-control" placeholder="Last Name">
+			    					<input type="text" name="email" class="form-control" placeholder="email">
 			    				</div>
 		    				</div>
 		    				<div class="d-md-flex">
@@ -281,24 +283,22 @@
 			    					<div class="form-field">
 		        					<div class="select-wrap">
 		                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                    <select name="" id="" class="form-control">
+		                    <select name="subject" id="" class="form-control">
 		                    	<option value="">Select Your Course</option>
-		                      <option value="">Art Lesson</option>
-		                      <option value="">Language Lesson</option>
-		                      <option value="">Music Lesson</option>
-		                      <option value="">Sports</option>
-		                      <option value="">Other Services</option>
+		                    @foreach($courses as $course)
+		                      <option value="{{$course['name']}}">{{$course['name']}}</option>
+		                     @endforeach
 		                    </select>
 		                  </div>
 			              </div>
 			    				</div>
 		    					<div class="form-group ml-md-4">
-			    					<input type="text" class="form-control" placeholder="Phone">
+			    					<input type="text" name="phone" class="form-control" placeholder="Phone">
 			    				</div>
 		    				</div>
 		    				<div class="d-md-flex">
 		    					<div class="form-group">
-			              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+			              <textarea name="msg" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
 			            </div>
 			            <div class="form-group ml-md-4">
 			              <input type="submit" value="Request A Call" class="btn btn-primary py-3 px-4">

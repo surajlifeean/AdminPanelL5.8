@@ -105,19 +105,22 @@ label{
         </div>
     </div>
     <div class="container my-2">
-        <form class="needs-validation " method="POST" novalidate>
+        <!-- <form class="needs-validation" method="POST" novalidate> -->
+          {{Form::open(['route' => 'student-registration.store','files' => true,'id'=>'contact-form','class'=>'form-horizontal course-form needs-validation','data-parsley-validate'])}}
+        <!-- <form action="{{route('registration.store')}}"  class="needs-validation" id="contact-form" method="post" data-parsley-validate> -->
+                    <!-- {{ csrf_field() }} -->
             <!-- <h4 class="mb-5">Registration Form:</h4> -->
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="validationCustom01">Applicant Name</label>
-                    <input type="text" class="form-control" id="validationCustom01" required>
+                    <input type="text" name="applicant" class="form-control" id="validationCustom01" required>
                     <div class="invalid-feedback">
                         Please Enter Name
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="validationCustom02">Father's Name</label>
-                    <input type="text" class="form-control" id="validationCustom02" required>
+                    <input type="text" name="father_name" class="form-control" id="validationCustom02" required>
                     <div class="invalid-feedback">
                         Please Enter Father's Name
                     </div>
@@ -126,39 +129,46 @@ label{
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="validationCustom03">Mother's Name</label>
-                    <input type="text" class="form-control" id="validationCustom03" required>
+                    <input type="text" name="mother_name" class="form-control" id="validationCustom03" required>
                     <div class="invalid-feedback">
                         Please Enter Mother's Name
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
+<!--                 <div class="col-md-6 mb-3">
                     <label for="validationCustom05">Enrollment No</label>
                     <input type="text" class="form-control" id="validationCustom05" required>
                     <div class="invalid-feedback">
                         Please provide a Enrollment No.
+                    </div>
+                </div> -->
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom05">Pin</label>
+                    <input type="text" name="pin" class="form-control" id="validationCustom05" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid Pin.
                     </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="validationCustom04">Address</label>
-                    <textarea class="form-control" id="validationCustom04" required></textarea>
+                    <textarea class="form-control" name="address" id="validationCustom04" required></textarea>
                     <div class="invalid-feedback">
                         Please select a valid state.
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
+<!--                 <div class="col-md-6 mb-3">
                     <label for="validationCustom05">Pin</label>
                     <input type="text" class="form-control" id="validationCustom05" required>
                     <div class="invalid-feedback">
                         Please provide a valid Pin.
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="form-row ">
                 <div class="col-md-6">
                     <label for="validationCustom12">Category</label>
-                    <select id="validationCustom12" class="custom-select" required>
+                    <select id="validationCustom12" name="category" class="custom-select" required>
                         <option selected disabled value="">Choose...</option>
                         <option value="SC">SC</option>
                         <option value="ST">ST</option>
@@ -171,7 +181,7 @@ label{
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="validationCustom06">Nationality</label>
-                    <input type="text" class="form-control" id="validationCustom06" required>
+                    <input type="text" name="nationality" class="form-control" id="validationCustom06" required>
                     <div class="invalid-feedback">
                         Please provide a Nationality.
                     </div>
@@ -180,14 +190,14 @@ label{
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="validationCustom07">Religion</label>
-                    <input type="text" class="form-control" id="validationCustom07" required>
+                    <input type="text" name="religion" class="form-control" id="validationCustom07" required>
                     <div class="invalid-feedback">
                         Please provide a Religion.
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="validationCustom08">Date Of Birth</label>
-                    <input type="date" class="form-control" id="validationCustom08" required>
+                    <input type="date" name="dob" class="form-control" id="validationCustom08" required>
                     <div class="invalid-feedback">
                         Please provide a date of birth.
                     </div>
@@ -196,14 +206,14 @@ label{
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="validationCustom10">Telephone (with STD code)</label>
-                    <input type="text" class="form-control" id="validationCustom10" required>
+                    <input type="text" name="telephone" class="form-control" id="validationCustom10" required>
                     <div class="invalid-feedback">
                         Please provide a Telephone No.
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="validationCustom11">Email</label>
-                    <input type="email" class="form-control" id="validationCustom11" required>
+                    <input type="email" name="email" class="form-control" id="validationCustom11" required>
                     <div class="invalid-feedback">
                         Please provide a Email.
                     </div>
@@ -211,19 +221,19 @@ label{
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="Sex">Sex</label>
-                    <select id="Sex" class="custom-select" required>
+                    <label for="Sex">Gender</label>
+                    <select id="Sex" name="sex" class="custom-select" required>
                         <option selected disabled value="">Choose...</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
                     <div class="invalid-feedback">
-                        Please Select a Valid Sex.
+                        Please Select a Valid Gender.
                     </div>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="medium">E-Book Medium</label>
-                    <select id="medium" class="custom-select" required>
+                    <select id="medium" name="e_book_medium" class="custom-select" required>
                         <option selected disabled value="">Choose...</option>
                         <option value="English">English</option>
                         <option value="Hindi">Hindi</option>
@@ -235,7 +245,7 @@ label{
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationCustom09">Mobile</label>
-                    <input type="text" class="form-control" id="validationCustom09" required>
+                    <input type="text" name="mobile" class="form-control" id="validationCustom09" required>
                     <div class="invalid-feedback">
                         Please provide a Mobile No.
                     </div>
@@ -262,11 +272,11 @@ label{
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="text" class="input-field edu" id="valid01"></td>
-                                <td><input type="text" class="input-field edu" id="valid02"></td>
-                                <td><input type="text" class="input-field edu" id="valid03"></td>
-                                <td><input type="text" class="input-field edu" id="valid04"></td>
-                                <td><input type="text" class="input-field edu" id="valid05"></td>
+                                <td><input type="text" class="input-field edu" name="exam_passed[]" id="valid01"></td>
+                                <td><input type="text" class="input-field edu" name="board[]" id="valid02"></td>
+                                <td><input type="text" class="input-field edu" name="institution[]" id="valid03"></td>
+                                <td><input type="text" class="input-field edu" name="year_of_passing[]" id="valid04"></td>
+                                <td><input type="text" class="input-field edu" name="percentage[]" id="valid05"></td>
                                 <td><button class="btn btn-primary" id="validate" type="button">Add</button></td>
                             </tr>
                         </tbody>
@@ -277,19 +287,19 @@ label{
             <div class="form-row">
                 <div class="input-group">
                     <div class="row ml-2">
-                        <label class="mt-4" for="image">Upload Image</label>
-                        <input type="file" class="form-control-file" id="file1" accept="image/jpeg,image/jpg"
-                            onchange="File1validation()" required>
+                        <label class="mt-4" for="image">Upload Your Image</label>
+                        <input type="file" class="form-control-file" name="image_name" id="file1" accept="image/jpeg,image/jpg"
+                            required>
                         <div class="invalid-feedback">
-                            please Upload Image
+                            Please Upload Image
                         </div>
                         <span id="size1_check" class="my-1"></span>
                     </div>
                     <div class="w-100"></div>
                     <div class="row ml-2">
                         <label class="mt-5" for="sign">Upload Signature</label>
-                        <input type="file" class="form-control-file" id="file2" accept="image/jpeg,image/jpg"
-                            onchange="File2validation()" required>
+                        <input type="file" class="form-control-file" name="sign_name" id="file2" accept="image/jpeg,image/jpg"
+                            required>
                         <div class="invalid-feedback">
                             please upload Signature
                         </div>
@@ -298,12 +308,12 @@ label{
                 </div>
 
             </div>
-            <label class="mt-5">Enclosure: Demand Draft Affiliated Xerox Copy of last qualification & Caste
-                Certificate</label>
+<!--             <label class="mt-5">Enclosure: Demand Draft Affiliated Xerox Copy of last qualification & Caste
+                Certificate</label> -->
             <br>
             <label class="label">Terms And Conditions:</label>
             <p>
-                I have read all th rules and regulations of the institute and admission to the course applied for.I
+                I have read all the rules and regulations of the institute and admission to the course applied for.I
                 declare that the above information
                 is true and correct to my knowledge and belief and I fully understand that my admission will stand
                 cancelled if any information by me
@@ -325,17 +335,7 @@ label{
     </div>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<!--     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script> -->
+
     <script src="{{asset('js/registration.js')}}"></script>
 
         </div>

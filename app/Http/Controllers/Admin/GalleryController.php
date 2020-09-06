@@ -139,7 +139,7 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        // dd($id);
     }
 
     public function delete($id,Request $request)

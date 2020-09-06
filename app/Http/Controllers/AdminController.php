@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Contact;
 use App\Doctor;
 use App\Course;
+use App\Registration;
+
 
 class AdminController extends Controller
 {
@@ -29,6 +31,7 @@ class AdminController extends Controller
         // dd("admin");
         $contacts=Contact::count();
         $doctors=Doctor::count();
+        $registrations=Registration::count();
         $course=Course::select('name')->groupBy('name')->get();
 
         // dd(count($course));
@@ -36,6 +39,7 @@ class AdminController extends Controller
 
         $var['doctor']=$doctors;
         $var['contact']=$contacts;
+        $var['registration']=$registrations;
         $var['course']=count($course);
         return view('admin.home')->withVar($var);
     }

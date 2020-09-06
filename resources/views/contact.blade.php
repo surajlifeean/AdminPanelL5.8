@@ -57,8 +57,9 @@
 					<div class="col-md-6 p-4 p-md-5 order-md-last bg-light">
 
 						<!-- <form action="#"> -->
-            <form action="{{route('contact.store')}}"  id="contact-form" method="post" data-parsley-validate>
-                    {{ csrf_field() }}
+            <!-- <form action="{{route('student-contact.store')}}"  id="contact-form" method="post" data-parsley-validate> -->
+            {{Form::open(['route' => 'student-contact.store','files' => true, 'class'=>'form-horizontal course-form','data-parsley-validate'])}}
+
 
               <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Your Name" required>
@@ -108,7 +109,7 @@ $(function () {
     $('.bs-callout-warning').toggleClass('hidden', ok);
   })
   .on('form:submit', function() {
-    return false; // Don't submit form for this demo
+    return true; // Don't submit form for this demo
   });
 });
 
