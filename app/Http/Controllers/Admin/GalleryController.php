@@ -115,6 +115,7 @@ class GalleryController extends Controller
         $image=$request->file('image_name');
         //if($request->hasFile('image_name')){
         //dd($image);
+        if(isset($image)){
         $filename='gallery'.'-'.rand().time().'.'.$image->getClientOriginalExtension();//part of image intervention library
         $location=public_path('/images/gallery/'.$filename);
 
@@ -122,9 +123,10 @@ class GalleryController extends Controller
 
         Image::make($image)->resize(800,600)->save($location);
         $gallery->image=$filename;
+}
         $gallery->save();        
 
-        session::flash('success', 'The Gallery Image Has Been Added Successfully!');
+        session::flash('success', 'The Gallery Image Has Been updated Successfully!');
         return redirect()->route('gallery.index');
 
 

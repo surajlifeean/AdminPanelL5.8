@@ -32,7 +32,7 @@
                           <label class="col-sm-3 control-label">Description</label>
                           <div class="col-sm-9">
                             <!-- <input type="text" name="description" class="form-control"  data-required="true" placeholder="Description" required> -->  
-                            <textarea id="summernote" name="description" class="form-control" required></textarea> 
+                            <textarea id="summernote" name="description" class="form-control"></textarea> 
                           </div>
                         </div>
                         <div class="line line-dashed line-lg pull-in"></div>
@@ -56,14 +56,14 @@
                           <label class="col-sm-3 control-label">Select An Image(Min Dimension:800x600)</label>
                           <div class="col-sm-9">
 
-            <div class="input_fields_wrap">
-                
-                
-                  <div style="margin-bottom:10px;">
-                       <input type="file" name="image_name" class="GalleryImage" id="img0" required /> &nbsp 
-                  </div>
+                              <div class="input_fields_wrap">
+                                  
+                                  
+                                    <div style="margin-bottom:10px;">
+                                         <input type="file" name="image_name" class="GalleryImage" id="img0" required /> &nbsp 
+                                    </div>
 
-           </div>      
+                             </div>      
                        </div>
                      </div>
                   <footer class="panel-footer text-right bg-light lter">

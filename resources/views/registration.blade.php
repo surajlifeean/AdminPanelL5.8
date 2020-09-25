@@ -96,7 +96,7 @@ label{
       </div>
     </section>
     
-    <section class="ftco-section ftco-no-pt ftc-no-pb">
+    <section class="ftco-section ftco-no-pt ftc-no-pb registration">
       <div class="container">
   <div class="row d-flex">
     <div class="container-title">
@@ -150,7 +150,7 @@ label{
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-12 mb-3">
                     <label for="validationCustom04">Address</label>
                     <textarea class="form-control" name="address" id="validationCustom04" required></textarea>
                     <div class="invalid-feedback">
@@ -311,7 +311,7 @@ label{
 <!--             <label class="mt-5">Enclosure: Demand Draft Affiliated Xerox Copy of last qualification & Caste
                 Certificate</label> -->
             <br>
-            <label class="label">Terms And Conditions:</label>
+<!--             <label class="label">Terms And Conditions:</label>
             <p>
                 I have read all the rules and regulations of the institute and admission to the course applied for.I
                 declare that the above information
@@ -329,7 +329,7 @@ label{
                         You must agree before submitting.
                     </div>
                 </div>
-            </div>
+            </div> -->
             <button class="btn btn-red mb-5" type="submit">Submit form</button>
         </form>
     </div>

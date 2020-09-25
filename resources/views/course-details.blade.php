@@ -15,33 +15,33 @@
     </section>
     <!-- {{dump($course)}} -->
 
-    <section class="ftco-section">
+    <section class="ftco-section fractro_details">
 
-			<div class="grid" style="margin: 20px;">
-			<div class="row" >
+			<div class="container course-duration">
+			<div class="duration" >
 
 			<h3>Duration:
 			{{$course[0]['duration']}}</h3>
 			</div>
 
-			<div class="row">
+			<div class="eligibility">
 
 			<h3>Eligibility:</h3>
 			{!!$course[0]['eligibility']!!}
 			</div>
 			</div>
-			<div class="container-fluid px-4">
-				<div class="row" style="margin: 20px;">
+			<div class="container px-4">
+				<div class="syllabus">
 
 
 @foreach($sname as $s)
 
-<div class="row">
-	<div class="col-md-12">
+				<div class="session">
+					<div class="col-md-12">
 
-<h3>Syllabus for: {{$s['session_name']}}</h3>
-</div>
-</div>
+				<h3>Syllabus for: {{$s['session_name']}}</h3>
+				</div>
+				</div>
 				<table class="table table-hover">
 				  <thead>
 				    <tr>

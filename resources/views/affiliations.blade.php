@@ -13,13 +13,13 @@
       </div>
     </section>
 
-     <section class="ftco-section ftco-no-pt ftc-no-pb">
+     <section class="ftco-section affilation_facto ftco-no-pt ftc-no-pb">
       <div class="container">
         <div class="row d-flex">
           <div class="col-md-6 order-md-last wrap-about  d-flex ">
             <div class="img" style="background-image: url({{asset('images/affiliations.jpg')}});"></div>
           </div>
-          <div class="col-md-6 py-5">
+          <div class="col-md-6 wrap-about py-5">
             
             <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>

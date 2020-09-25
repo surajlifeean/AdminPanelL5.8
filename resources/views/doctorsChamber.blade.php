@@ -239,7 +239,7 @@ div.user-menu div.user-menu-content:not(.active){
 
 @foreach($doctors as $doctor)
 
-    <div class="row user-menu-container square">
+    <div class="row user-menu-container square doctor">
         <div class="col-md-7 user-details">
             <div class="row coralbg white">
                 <div class="col-md-6 no-pad">
@@ -264,7 +264,7 @@ div.user-menu div.user-menu-content:not(.active){
 
         </div>
 
-        <div class="col-md-4 user-menu user-pad">
+        <div class="col-md-5 user-menu user-pad">
             <div class="user-menu-content active">
                 <h3>
                     Visit Dates And Time

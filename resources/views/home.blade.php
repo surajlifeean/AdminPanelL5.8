@@ -8,7 +8,7 @@
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-6 ftco-animate">
-            <h1 class="mb-4">Education Needs Complete Solution</h1>
+            <h1 class="mb-4">Build A Strong Foundation To Get Going In The Field Of Paramedical</h1>
             <p></p>
             <p><a href="{{route('student-contact.index')}}" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
           </div>
@@ -42,14 +42,14 @@
 					</div>
 					<div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
           	<h2 class="mb-4">What We Offer</h2>
-						<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
+						<p>Dream Search Health Point is a premium institute located in Kolkata training and certifying candidates in various Paramedical Courses. Few of the facilities that we provide are -</p>
 						<div class="row mt-5">
 							<div class="col-lg-6">
 								<div class="services-2 d-flex">
 									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-security"></span></div>
 									<div class="text pl-3">
 										<h3>Safety First</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+										<p>All safety precautions are takin in the classrooms and during practicals</p>
 									</div>
 								</div>
 							</div>
@@ -58,7 +58,7 @@
 									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-reading"></span></div>
 									<div class="text pl-3">
 										<h3>Regular Classes</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+										<p>We never miss a scheduled class time. Regularity in curriculum is maintained.</p>
 									</div>
 								</div>
 							</div>
@@ -67,7 +67,7 @@
 									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-diploma"></span></div>
 									<div class="text pl-3">
 										<h3>Certified Teachers</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+										<p>We have a team or well silled and certified ingenious teachers</p>
 									</div>
 								</div>
 							</div>
@@ -76,7 +76,7 @@
 									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-education"></span></div>
 									<div class="text pl-3">
 										<h3>Sufficient Classrooms</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+										<p>Classrooms with sufficient space and furnitures</p>
 									</div>
 								</div>
 							</div>
@@ -85,7 +85,7 @@
 									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-jigsaw"></span></div>
 									<div class="text pl-3">
 										<h3>Creative Lessons</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+										<p>We try to present the lesssons in ways that it becomes easy to grab</p>
 									</div>
 								</div>
 							</div>
@@ -93,8 +93,8 @@
 								<div class="services-2 d-flex">
 									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-kids"></span></div>
 									<div class="text pl-3">
-										<h3>Sports Facilities</h3>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+										<h3>Practical Facilities</h3>
+										<p>When you do you remember, so we put necessary stress on practicals.</p>
 									</div>
 								</div>
 							</div>
@@ -109,9 +109,9 @@
     	<div class="container">
     		<div class="row justify-content-center mb-5 pb-2 d-flex">
     			<div class="col-md-6 align-items-stretch d-flex">
-    				<div class="img img-video d-flex align-items-center" style="background-image: url({{asset('images/about-2.jpg')}});">
+    				<div class="img img-video d-flex align-items-center" style="background-image: url({{asset('images/doctors/paramedicalVid.png')}});">
     					<div class="video justify-content-center">
-								<a href="youtube.com/watch?v=DhPA4-FU9ys" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+								<a href="https://www.youtube.com/watch?v=cDHAqjcHjuU" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
 									<span class="ion-ios-play"></span>
 		  					</a>
 							</div>
@@ -129,11 +129,11 @@
 
 
 		<section class="ftco-section">
-			<div class="container-fluid px-4">
+			<div class="container px-4">
 				<div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-8 text-center heading-section ftco-animate">
             <h2 class="mb-4"><span>Our</span> Courses</h2>
-            <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+            <p>Listed below are the courses we provide</p>
           </div>
         </div>	
 				<div class="row">
@@ -319,7 +319,7 @@
         <div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-8 text-center heading-section ftco-animate">
             <h2 class="mb-4">Student Says About Us</h2>
-            <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+            <p>Here is what students say about us</p>
           </div>
         </div>
         <div class="row ftco-animate justify-content-center">
@@ -327,47 +327,47 @@
             <div class="carousel-testimony owl-carousel">
               <div class="item">
                 <div class="testimony-wrap d-flex">
-                  <div class="user-img mr-4" style="background-image: url({{asset('images/teacher-1.jpg')}})">
+                  <div class="user-img mr-4" style="background-image: url({{asset('images/rev/rev3.jpg')}})">
                   </div>
                   <div class="text ml-2">
                   	<span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Racky Henderson</p>
-                    <span class="position">Father</span>
+                    <p>Knowledable and Supportive Teachers. I feel comfortable in clearing my doubts.</p>
+                    <p class="name">Reshimi</p>
+                    <span class="position">BSS Diploma in patent care</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap d-flex">
-                  <div class="user-img mr-4" style="background-image: url({{asset('images/teacher-2.jpg')}})">
+                  <div class="user-img mr-4" style="background-image: url({{asset('images/rev/rev2.jpg')}})">
                   </div>
                   <div class="text ml-2">
                   	<span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Henry Dee</p>
-                    <span class="position">Mother</span>
+                    <p>Well explained practicals and availibility of all necessary equipment. Learning is fun here.</p>
+                    <p class="name">Dhritiman</p>
+                    <span class="position">Operation Theatre Technologies</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap d-flex">
-                  <div class="user-img mr-4" style="background-image: url({{asset('images/teacher-3.jpg')}})">
+                  <div class="user-img mr-4" style="background-image: url({{asset('images/rev/rev1.jpg')}})">
                   </div>
                   <div class="text ml-2">
                   	<span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Mark Huff</p>
-                    <span class="position">Mother</span>
+                    <p>The ambiance is good and classrooms are spacious. Learning is easy and comfortable here.</p>
+                    <p class="name">Tanushree</p>
+                    <span class="position">Diploma in medical laboratory Technology</span>
                   </div>
                 </div>
               </div>
-              <div class="item">
+<!--               <div class="item">
                 <div class="testimony-wrap d-flex">
                   <div class="user-img mr-4" style="background-image: url({{asset('images/teacher-4.jpg')}})">
                   </div>
@@ -380,8 +380,8 @@
                     <span class="position">Mother</span>
                   </div>
                 </div>
-              </div>
-              <div class="item">
+              </div> -->
+<!--               <div class="item">
                 <div class="testimony-wrap d-flex">
                   <div class="user-img mr-4" style="background-image: url({{asset('images/teacher-1.jpg')}})">
                   </div>
@@ -394,7 +394,7 @@
                     <span class="position">Mother</span>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -402,7 +402,7 @@
     </section>
 
 
-<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+<!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
   <div class="toast" style="position: absolute; top: 0; right: 0;">
     <div class="toast-header">
       <img src="..." class="rounded mr-2" alt="...">
@@ -416,6 +416,16 @@
       Hello, world! This is a toast message.
     </div>
   </div>
-</div>
+</div> -->
 
 @endsection
+
+@section('scripts')
+	<script>
+		$('.owl-carousel').owlCarousel({
+			autoHeight:true;
+		});
+	</script>
+
+@endsection
+

@@ -15,7 +15,7 @@
     </section>
 
     <section class="ftco-section">
-			<div class="container-fluid px-4">
+			<div class="container px-4">
 				<div class="row">
 					@php
 						$i=1;
